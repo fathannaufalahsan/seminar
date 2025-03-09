@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Undangan Seminar Hasil">
+    <title>Undangan Seminar Hasil</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            border-bottom: 5px solid #0056b3;
+            transition: padding 0.5s ease;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250%;
+            height: 250%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: headerAnimation 15s ease-in-out infinite;
+        }
+
+        @keyframes headerAnimation {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            transition: font-size 0.3s ease;
+        }
+
+        /* Main Content */
+        section {
+            padding: 60px 0;
+            margin: 20px 0;
+            background-color: #f8f9fa; /* Warna latar belakang ringan */
+            position: relative;
+            z-index: 1;
+        }
+
+        .undangan {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Gaya untuk elemen dengan class 'highlight' */
+        .highlight {
+            color: #007BFF; /* Biru terang */
+            font-weight: 600;
+        }
+
+        /* Gaya untuk elemen dengan class 'seminar-title' */
+        .seminar-title {
+            color: black; /* Tomat (warna berbeda untuk perbedaan yang jelas) */
+            font-weight: 700;
+        }
+
+        @keyframes fadeIn {
+            0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            color: #007BFF;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        h2:hover {
+            color: #0056b3;
+            transform: scale(1.05); /* Efek zoom ringan saat hover */
+        }
+
+        /* Gaya untuk elemen dengan class 'highlight' */
+        .seminar-title:hover {
+            color: black;
+            transform: scale(1.05); /* Efek zoom ringan saat hover */
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+            padding: 0;
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            margin: 15px 0;
+            padding-left: 20px;
+            position: relative;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        ul li:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+            transform: translateX(10px); /* Efek geser kiri-kanan */
+        }
+
+        ul li strong {
+            color: #007BFF;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        ul li:hover strong {
+            color: #0056b3;
+        }
+
+        /* Styling tombol CV yang modern */
+        .cv-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 30px; /* Sudut membulat */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Efek hover pada tombol */
+        .cv-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            transform: scale(0);
+            z-index: -1;
+        }
+
+        .cv-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-4px); /* Efek melayang ke atas */
+        }
+
+        .cv-button:hover::before {
+            transform: scale(1);
+        }
+
+        /* Tombol aktif saat diklik */
+        .cv-button:active {
+            transform: translateY(2px); /* Efek pencet tombol */
+        }
+
+        /* Penyesuaian tampilan untuk perangkat mobile */
+        @media (max-width: 768px) {
+        section {
+            padding: 40px 0;
+        }
+
+        .undangan {
+            padding: 30px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+        }
+
+        ul li {
+            font-size: 1rem;
+        }
+        }
+
+        /* Team Section */
+        .team {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .team .member {
+            text-align: center;
+            width: 30%;
+            min-width: 250px;
+        }
+
+        .team img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .team img:hover {
+            transform: scale(1.1);
+        }
+
+        .team h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .team p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 80px;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+        }
+
+        .footer-social {
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            margin: 0 15px;
+            color: #fff;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: #007BFF;
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 15px;
+                box-sizing: border-box;
+            }
+
+            header {
+                padding: 60px 0;
+                text-align: center;
+                background-color: #f7f7f7;
+            }
+
+            footer {
+                padding: 30px 0;
+                text-align: center;
+                background-color: #f1f1f1;
+            }
+
+            .team {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .team .member {
+                margin-bottom: 10px;
+                text-align: center;
+                width: 100%;
+            }
+
+            .team img {
+                width: 80px;
+                height: 80px;
+                border-radius: 0;
+                margin-bottom: 5px;
+            }
+
+            .team .member:hover img {
+                transform: scale(1.05);
+                transition: 0.3s ease;
+            }
+
+            .team .member p {
+                font-size: 1rem;
+                color: #333;
+                margin-top: 5px;
+                border-top: 1px solid #ddd;
+                padding-top: 5px;
+            }
+
+            footer p {
+                margin-top: 10px;
+                font-size: 1rem;
+                color: #666;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Undangan Seminar Hasil</h1>
+        </div>
+    </header>
+
+<section class="undangan">
+    <div class="container">
+        <h2>Detail Seminar Hasil</h2>
+        <ul>
+            <li><strong class="highlight"></strong> Dengan hormat, kami mengundang Anda untuk hadir pada acara <strong class="seminar-title"> Seminar Hasil Mahasiswa</strong> yang akan diselenggarakan pada:</li>
+            <li><strong class="highlight">Nama:</strong> Fathan Naufal Ahsan </li>
+            <li><strong class="highlight">Npm:</strong> 211501118 </li>
+            <li><strong class="highlight">Judul Seminar:</strong> Pemodelan Hec-18 Pada Gerusan Lokal Pilar Jembatan Berbasis Bahasa Pemrograman Python</li>
+            <li><strong class="highlight">Tanggal:</strong> 11 Maret 2025</li>
+            <li><strong class="highlight">Waktu:</strong> 09:00 - 12:00 WIB</li>
+            <li><strong class="highlight">Tempat:</strong> Aula Universitas Lampung </li>
+        </ul>
+        <p><strong class="seminar-title">Terima kasih atas perhatiannya !!!</strong></p>
+    </div>
+</section>
+
+
+<section class="team">
+    <div class="member">
+        <img src="profil/yuda.jpg" alt="Pembimbing 1">
+        <h3>Pembimbing 1</h3>
+        <p>Dr. Hj. Yuda Romdania, S.T.,M.T.</p>
+        <a href="https://sipil.eng.unila.ac.id/wp-content/uploads/2023/08/23.-H-6-Yuda-Romdania-S.T.-M.T.docx.pdf" target="_blank" class="cv-button">Lihat Detail</a> <!-- Tombol untuk CV Pembimbing 1 -->
+    </div>
+    <div class="member">
+        <img src="profil/zakaria.jpg" alt="Pembimbing 2">
+        <h3>Pembimbing 2</h3>
+        <p>Ir. Ahmad Zakaria, M.T., Ph.D.</p>
+        <a href="https://sipil.eng.unila.ac.id/wp-content/uploads/2023/08/19.-H-5-Ir.-Ahmad-Zakaria-M.T.-Ph.D.docx.pdf" target="_blank" class="cv-button">Lihat Detail</a> <!-- Tombol untuk CV Pembimbing 2 -->
+    </div>
+    <div class="member">
+        <img src="profil/herison.png" alt="Penguji">
+        <h3>Penguji</h3>
+        <p>Dr. H. Ahmad Herison, S.T., M.T.</p>
+        <a href="https://sipil.eng.unila.ac.id/wp-content/uploads/2023/08/17.-H-5-Dr.-Ahmad-Herison-S.T.M.T.docx.pdf" target="_blank" class="cv-button">Lihat Detail</a> <!-- Tombol untuk CV Penguji -->
+    </div>
+</section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Universitas Lampung 2025</p>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/fathan-naufal-ahsan" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/fathannaufalahsan" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/fathannaufalahsan" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
