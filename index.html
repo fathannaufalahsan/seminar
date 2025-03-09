@@ -83,6 +83,28 @@
             transition: font-size 0.3s ease;
         }
 
+        /* Styling untuk gambar profil */
+        .profile-img {
+            margin-top: 20px; /* Menambahkan sedikit jarak dari elemen sebelumnya */
+            display: flex;
+            justify-content: center; /* Menyusun gambar di tengah */
+            align-items: center;
+        }
+
+        .img-profile {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid #007BFF; /* Menambahkan border biru pada gambar */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out; /* Efek transisi saat hover */
+        }
+
+        .img-profile:hover {
+            transform: scale(1.1); /* Efek zoom pada gambar saat hover */
+        }
+
         /* Main Content */
         section {
             padding: 60px 0;
@@ -112,12 +134,13 @@
 
         /* Gaya untuk elemen dengan class 'seminar-title' */
         .seminar-title {
-            color: black; /* Tomat (warna berbeda untuk perbedaan yang jelas) */
+            color: black; /* Hitam untuk memberikan kontras */
             font-weight: 700;
         }
 
+        /* Animasi fadeIn */
         @keyframes fadeIn {
-            0% {
+        0% {
             opacity: 0;
             transform: translateY(30px);
         }
@@ -128,6 +151,7 @@
         }
         }
 
+        /* Styling untuk judul h2 */
         h2 {
             font-size: 2.8rem;
             color: #007BFF;
@@ -143,12 +167,13 @@
             transform: scale(1.05); /* Efek zoom ringan saat hover */
         }
 
-        /* Gaya untuk elemen dengan class 'highlight' */
+        /* Gaya untuk elemen dengan class 'seminar-title' saat hover */
         .seminar-title:hover {
             color: black;
             transform: scale(1.05); /* Efek zoom ringan saat hover */
         }
 
+        /* Gaya untuk daftar (ul) dan list item (li) */
         ul {
             list-style: none;
             margin-left: 0;
@@ -266,6 +291,7 @@
             height: 250px;
             object-fit: cover;
             margin-bottom: 10px;
+            border: 3px solid #007BFF;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
         }
@@ -298,15 +324,18 @@
         }
 
         footer p {
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Ukuran font untuk perangkat desktop */
             margin: 0;
             padding: 10px 0;
+            word-wrap: break-word; /* Memastikan teks dapat membungkus jika terlalu panjang */
         }
 
         /* Responsif untuk tampilan mobile */
         @media (max-width: 768px) {
         footer p {
-            font-size: 1rem; /* Ukuran font lebih kecil di perangkat mobile */
+            font-size: 1.2rem; /* Pastikan ukuran font tetap terlihat di perangkat mobile */
+            line-height: 1.5;  /* Menambah jarak antar baris agar teks lebih jelas */
+            padding: 20px 15px; /* Memberikan padding ekstra di perangkat mobile agar tidak terpotong */
         }
 
         .footer-social {
@@ -421,7 +450,13 @@
 
 <section class="undangan">
     <div class="container">
-        <h2>Detail Seminar Hasil</h2>
+        <h2>Seminar Hasil</h2>
+
+        <!-- Menambahkan foto profil di bawah judul -->
+        <div class="profile-img">
+            <img src="profil/naufal.jpeg" alt="Foto Profil" class="img-profile">
+        </div>
+
         <ul>
             <li><strong class="highlight"></strong> Dengan hormat, kami mengundang Anda untuk hadir pada acara <strong class="seminar-title"> Seminar Hasil Mahasiswa</strong> yang akan diselenggarakan pada:</li>
             <li><strong class="highlight">Nama:</strong> Fathan Naufal Ahsan </li>
@@ -431,6 +466,7 @@
             <li><strong class="highlight">Waktu:</strong> 09:00 - 12:00 WIB</li>
             <li><strong class="highlight">Tempat:</strong> Aula Universitas Lampung </li>
         </ul>
+
         <p><strong class="seminar-title">TERIMA KASIH ATAS PERHATIANNYA !!!</strong></p>
     </div>
 </section>
@@ -441,19 +477,19 @@
         <img src="profil/yuda.jpg" alt="Pembimbing 1">
         <h3>Pembimbing 1</h3>
         <p>Dr. Hj. Yuda Romdania, S.T.,M.T.</p>
-        <a href="https://sipil.eng.unila.ac.id/wp-content/uploads/2023/08/23.-H-6-Yuda-Romdania-S.T.-M.T.docx.pdf" target="_blank" class="cv-button">Lihat Detail</a> <!-- Tombol untuk CV Pembimbing 1 -->
+        <a href="https://sipil.eng.unila.ac.id/wp-content/uploads/2023/08/23.-H-6-Yuda-Romdania-S.T.-M.T.docx.pdf" target="_blank" class="cv-button">Lihat Detail</a>
     </div>
     <div class="member">
         <img src="profil/zakaria.jpg" alt="Pembimbing 2">
         <h3>Pembimbing 2</h3>
         <p>Ir. Ahmad Zakaria, M.T., Ph.D.</p>
-        <a href="https://sipil.eng.unila.ac.id/wp-content/uploads/2023/08/19.-H-5-Ir.-Ahmad-Zakaria-M.T.-Ph.D.docx.pdf" target="_blank" class="cv-button">Lihat Detail</a> <!-- Tombol untuk CV Pembimbing 2 -->
+        <a href="https://sipil.eng.unila.ac.id/wp-content/uploads/2023/08/19.-H-5-Ir.-Ahmad-Zakaria-M.T.-Ph.D.docx.pdf" target="_blank" class="cv-button">Lihat Detail</a>
     </div>
     <div class="member">
         <img src="profil/herison.png" alt="Penguji">
         <h3>Penguji</h3>
         <p>Dr. H. Ahmad Herison, S.T., M.T.</p>
-        <a href="https://sipil.eng.unila.ac.id/wp-content/uploads/2023/08/17.-H-5-Dr.-Ahmad-Herison-S.T.M.T.docx.pdf" target="_blank" class="cv-button">Lihat Detail</a> <!-- Tombol untuk CV Penguji -->
+        <a href="https://sipil.eng.unila.ac.id/wp-content/uploads/2023/08/17.-H-5-Dr.-Ahmad-Herison-S.T.M.T.docx.pdf" target="_blank" class="cv-button">Lihat Detail</a>
     </div>
 </section>
 
