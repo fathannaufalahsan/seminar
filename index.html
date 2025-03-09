@@ -285,22 +285,41 @@
             color: #555;
         }
 
-/* Footer Section */
-footer {
-    background-color: #007BFF;
-    color: white;
-    text-align: center;
-    padding: 40px 0;
-    margin: 0;
-    position: relative;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
+        /* Footer Section */
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin: 0;
+            position: relative;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
 
         footer p {
             font-size: 1.2rem;
+            margin: 0;
+            padding: 10px 0;
         }
 
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+        footer p {
+            font-size: 1rem; /* Ukuran font lebih kecil di perangkat mobile */
+        }
+
+        .footer-social {
+            margin-top: 15px;
+        }
+
+        .footer-social a {
+            margin: 0 10px; /* Mengurangi jarak antar ikon di mobile */
+            font-size: 1.5rem; /* Ukuran ikon sosial lebih kecil */
+        }
+        }
+
+        /* Styling untuk ikon sosial */
         .footer-social {
             margin-top: 20px;
         }
@@ -394,11 +413,11 @@ footer {
 
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Undangan Seminar Hasil</h1>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <h1>Undangan Seminar Hasil</h1>
+    </div>
+</header>
 
 <section class="undangan">
     <div class="container">
@@ -438,16 +457,16 @@ footer {
     </div>
 </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; Universitas Lampung 2025</p>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/fathan-naufal-ahsan" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/fathannaufalahsan" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://instagram.com/fathannaufalahsan" title="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
+<footer>
+    <div class="container">
+        <p>&copy; Universitas Lampung 2025</p>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/fathan-naufal-ahsan" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/fathannaufalahsan" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/fathannaufalahsan" title="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-    </footer>
+        </div>
+</footer>
 
 </body>
 
